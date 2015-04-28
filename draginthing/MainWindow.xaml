@@ -7,15 +7,22 @@
 		<Button x:Name="textisbn" Content="test isbn&#xA;" HorizontalAlignment="Left" Margin="355,27,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click" Height="22"/>
 		<TextBlock x:Name="texblok" HorizontalAlignment="Left" Margin="369,82,0,0" TextWrapping="Wrap" Text="RESULT" VerticalAlignment="Top" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
 		<TextBox x:Name="texbox" HorizontalAlignment="Left" Height="23" Margin="334,54,0,0" TextWrapping="Wrap" Text="ENTER ISBN HERE" VerticalAlignment="Top" Width="120"/>
-		<Image x:Name="testimg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="478,217,0,0" Source="C:\Users\tyler.miller\Desktop\Tutorials\draginthing\draginthing\bin\Debug\darkred.png"/>
-		<Button x:Name="loadbutt" Content="Button" HorizontalAlignment="Left" Margin="398,323,0,0" VerticalAlignment="Top" Width="75" Click="loadbutt_Click"/>
-		<TextBox x:Name="setbox" HorizontalAlignment="Left" Height="23" Margin="478,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<Image x:Name="testimg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="429,419,0,0" Source="C:\Users\tyler.miller\Desktop\Tutorials\draginthing\draginthing\bin\Debug\darkred.png"/>
+		<Button x:Name="loadbutt" Content="Import..." HorizontalAlignment="Left" Margin="349,525,0,0" VerticalAlignment="Top" Width="75" Click="loadbutt_Click"/>
+		<TextBox x:Name="setbox" HorizontalAlignment="Left" Height="23" Margin="429,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
 		<Slider x:Name="testslider" HorizontalAlignment="Left" Margin="334,103,0,0" VerticalAlignment="Top" Width="211" ValueChanged="Slider_ValueChanged"/>
-		<Menu x:Name="testcanvas" HorizontalAlignment="Left" Height="440" Margin="26,116,0,0" VerticalAlignment="Top" Width="240"/>
+		<Canvas x:Name="testcanvas" HorizontalAlignment="Left" Height="546" Margin="10,10,0,0" VerticalAlignment="Top" Width="256"/>
 		<Button x:Name="FIZZBUZZ" Content="fizzbuzz" HorizontalAlignment="Left" Margin="561,26,0,0" VerticalAlignment="Top" Width="75" Click="FIZZBUZZ_Click"/>
 		<Button x:Name="belowonek" Content="justforme" HorizontalAlignment="Left" Margin="561,53,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.253,0.318" Click="belowonek_Click"/>
 		<TextBox x:Name="numfor" HorizontalAlignment="Left" Height="23" Margin="641,53,0,0" TextWrapping="Wrap" Text="put a number here" VerticalAlignment="Top" Width="120" TextChanged="numfor_TextChanged"/>
 		<Button x:Name="shapebutton" Content="shape maker" HorizontalAlignment="Left" Margin="561,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 		<TextBox x:Name="shapebox" HorizontalAlignment="Left" Height="23" Margin="561,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<Button x:Name="CanvasMover" Content="Move To Sheet" HorizontalAlignment="Left" Margin="290,461,0,0" VerticalAlignment="Top" Width="98" Click="CanvasMover_Click"/>
+		<TextBox x:Name="doginput" HorizontalAlignment="Left" Height="23" Margin="324,196,0,0" TextWrapping="Wrap" Text="TREAT INPUT" VerticalAlignment="Top" Width="196"/>
+		<TextBlock x:Name="doghappy" HorizontalAlignment="Left" Margin="324,224,0,0" TextWrapping="Wrap" Text="TOTAL HAPPINESS" VerticalAlignment="Top" Width="196"/>
+		<Button x:Name="dogsort" Content="SORT TREATS" HorizontalAlignment="Left" Margin="324,169,0,0" VerticalAlignment="Top" Width="85" Click="dogsort_Click"/>
+		<TextBlock x:Name="dogorder" HorizontalAlignment="Left" Margin="324,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="18"><Run Text="TREAT ORDER"/><LineBreak/><Run/></TextBlock>
+		<TextBox x:Name="MoveWidth" HorizontalAlignment="Left" Height="23" Margin="290,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"/>
+		<TextBox x:Name="MoveHeight" HorizontalAlignment="Left" Height="23" Margin="290,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"/>
 	</Grid>
 </Window>

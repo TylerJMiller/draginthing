@@ -136,6 +136,85 @@ namespace draginthing
 			return false;
 		}
 
+		bool testchar(char achar)
+		{
+			switch ((int)achar)
+			{
+				case 48:
+					return true;
+				case 49:
+					return true;
+				case 50:
+					return true;
+				case 51:
+					return true;
+				case 52:
+					return true;
+				case 53:
+					return true;
+				case 54:
+					return true;
+				case 55:
+					return true;
+				case 56:
+					return true;
+				case 57:
+					return true;
+			}
+			return false;
+		}
+
+
+		bool testdog(string astring)
+		{
+			if (astring.Length == 0)
+				return false;
+			int temp = 0;
+			for (int i = 0; i < astring.Length; i++)
+			{
+				switch ((int)astring[i])
+				{
+					case 32:
+						temp++;
+						break;
+					case 48:
+						temp++;
+						break;
+					case 49:
+						temp++;
+						break;
+					case 50:
+						temp++;
+						break;
+					case 51:
+						temp++;
+						break;
+					case 52:
+						temp++;
+						break;
+					case 53:
+						temp++;
+						break;
+					case 54:
+						temp++;
+						break;
+					case 55:
+						temp++;
+						break;
+					case 56:
+						temp++;
+						break;
+					case 57:
+						temp++;
+						break;
+				}
+			}
+			if (temp == astring.Length)
+				return true;
+			return false;
+		}
+
+
 		void fizzbuzz(int a)
 		{
 			string fibu = "";
@@ -150,10 +229,14 @@ namespace draginthing
         public MainWindow()
         {
             InitializeComponent();
+			testcanvas.Background = new SolidColorBrush(Colors.Red);
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+			
 			char[] nustring = texbox.Text.ToCharArray();
 			texblok.Text = "clicked";
 			float tcount = 10;
@@ -206,7 +289,7 @@ namespace draginthing
 		{
 			texblok.Text = "oh no";
 		}
-
+		//ADD CANVAS STATIC
 		private void loadbutt_Click(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog opf = new OpenFileDialog();
@@ -220,10 +303,9 @@ namespace draginthing
 
 			if (userClickedOK == true)
 			{
-				
 				setbox.Text = opf.FileName;
 				testimg.Source = new WriteableBitmap(new BitmapImage(new Uri(opf.FileName)));
-				
+				//testcanvas.Items.Add(testimg);
 				//opf.OpenFile();
 			}
 		}
@@ -292,9 +374,91 @@ namespace draginthing
 			}
 			if (a == 0)
 				return;
+		}
+		
+		private void CanvasMover_Click(object sender, RoutedEventArgs e)
+		{
+			Image tempimg = new Image();
+			tempimg.Source = testimg.Source;
+			if (teststring(MoveWidth.Text) && teststring(MoveHeight.Text))
+			{
+				Canvas.SetTop(tempimg, Int32.Parse(MoveWidth.Text));
+				Canvas.SetLeft(tempimg, Int32.Parse(MoveHeight.Text));
+			}
+			else
+			{
+				Canvas.SetTop(tempimg, 50);
+				Canvas.SetLeft(tempimg, 50);
+			}
+			testcanvas.Children.Add(tempimg);
+			
+		}
 
+		private void dogsort_Click(object sender, RoutedEventArgs e)
+		{
+			int maxinput = 20;
+			if (!testdog(doginput.Text))
+			{
+				dogorder.Text = "INVALID CHARACTERS";
+				return;
+			}
+			string a = "";
+			//int[] b = new int[maxinput];
+			List<int> c = new List<int>();
+			for (int i = 0; i < doginput.Text.Length; i++)
+			{
+				
+				if (testchar(doginput.Text[i]))
+				{
+					a += doginput.Text[i] + " ";
+					//b[j] = Int32.Parse(doginput.Text[i].ToString());
+					c.Add(Int32.Parse(doginput.Text[i].ToString()));
+					if (c.Count > maxinput)
+					{
+						dogorder.Text = "TOO MANY TREATS, " + maxinput + " OR LESS";
+						return;
+					}
+				}
+			}
+			/*if (b.Length > maxinput)
+			{
+				dogorder.Text = "TOO MANY TREATS, " + maxinput + " OR LESS";
+				return;
+			}*/
+			c.Sort();
+			List<int> d = new List<int>();
+			int tempint = c.Count;
+			for (int i = 0; i < tempint; i++)
+			{
+				d.Add(c.Last());
+				c.Remove(c.Last());
+				if (c.Count == 0)
+					break;
+				d.Add(c.First());
+				c.Remove(c.First());
+				if (c.Count == 0)
+					break;
+				d.Add(c.First());
+				c.Remove(c.First());
+				if (c.Count == 0)
+					break;
+			}
+			c = d;
+
+
+
+
+
+				//dogorder.Text = a;
+				dogorder.Text = "";
+			for(int i = 0; i < c.Count; i++)
+			{
+				dogorder.Text += c[i] + " ";
+			}
 
 		}
+
+
 	}
 }
 
