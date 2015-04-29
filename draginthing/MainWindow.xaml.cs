@@ -25,6 +25,15 @@ namespace draginthing
 
     public partial class MainWindow : Window
     {
+		CanvasManager SpriteCanvas = new CanvasManager();
+        public MainWindow()
+        {
+            InitializeComponent();
+			testcanvas.Background = new SolidColorBrush(Colors.Red);
+
+
+        }
+
 		int getnum(char ac)
 		{
 			switch((int)ac)
@@ -225,14 +234,6 @@ namespace draginthing
 			if (fibu != "")
 				Console.WriteLine(fibu);
 		}
-
-        public MainWindow()
-        {
-            InitializeComponent();
-			testcanvas.Background = new SolidColorBrush(Colors.Red);
-
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

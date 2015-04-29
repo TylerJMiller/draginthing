@@ -4,24 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+
 namespace draginthing
 {
-	class CanvasManager
+	class CanvasImage : Image
 	{
-		//public Canvas Jeffrey;
-		public List<CanvasImage> SpriteList;
-		public CanvasManager()
-		{
-			
-		}
-
-		public bool AddImage(Image tImage)
+		public CanvasImage() 
 		{
 
-
-
-			return true;
 		}
+
+		//public string filename;
+		public int x;
+		public int y;
 
 
 	}
